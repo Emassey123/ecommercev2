@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "title": "Arsenal Away Jersey",
+    "price": 69.99,
+    "description": "Made with premium silk with elastic stretch.",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "Arsenal Home Jersey",
+    "price": 69.99,
+    "description": "Made with premius silk with elastic stretch.",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "Athletico Madrid Away Jersey",
+    "price": 74.99,
+    "description": "Premius knitt with elastic stretch capability.",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "title": "Athletico Madrid Home Jersey",
+    "price": 74.99,
+    "description": "Premius knitt with elastic stretch capability.",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "title": "Barcelona Away Jersey",
+    "price": 100.99,
+    "description": "Knitted to perfection with sweat wicking capabilities.",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "title": "Barcelona Home Jersey",
+    "price": 100.99,
+    "description": "Knitted to perfection with sweat wicking capabilities.",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "title": "Bayern Munich Away Jersey",
+    "price": 149.99,
+    "description": "Soft to the touch premium silk.",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "title": "Bayern Munich Home Jersey",
+    "price": 149.99,
+    "description": "Soft to the touch premium silk.",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "title": "Chelsea Away Jersey",
+    "price": 59.99,
+    "description": "Cotton material, soft to the touch.",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "title": "Chelsea Home Jersey",
+    "price": 59.99,
+    "description": "Cotton material, soft to the touch.",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "title": "Borussia Dortmund Away Jersey",
+    "price": 159.99,
+    "description": "Made to last with hand stitched cotton material.",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "title": "Borussia Dortmund Home Jersey",
+    "price": 159.99,
+    "description": "Made to last with hand stitched cotton material.",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "title": "Liverpool Away Jersey",
+    "price": 200.99,
+    "description": "Authentic Liverpool jersey from the Liverpool team themselves.",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "title": "Liverpool Home Jersey",
+    "price": 200.99,
+    "description": "Authentic Liverpool jersey from the Liverpoool team themselves.",
+    "image": ""
+  },
+  {
+    "id": 15,
+    "title": "Machester City Away Jersey",
+    "price": 89.99,
+    "description": "Premium silk with hand pressed logos.",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "title": "Manchester City Home Jersey",
+    "price": 89.99,
+    "description": "Premium silk with hand pressed logos.",
+    "image": ""
+  },
+  {
+    "id": 17,
+    "title": "Manchester United Away Jersey",
+    "price": 99.99,
+    "description": "Hot off the press, satin lined jersey with sweat protection.",
+    "image": ""
+  },
+  {
+    "id": 18,
+    "title": "Manchester United Home Jersey",
+    "price": 99.99,
+    "description": "Hot off the press, sating lined jersey with sweat protection.",
+    "image": ""
+  },
+  {
+    "id": 19,
+    "title": "Real Madrid Away Jersey",
+    "price": 500.99,
+    "description": "Authentic rare jersey, worn by Cristiano Ronaldo himself.",
+    "image": ""
+  },
+  {
+    "id": 20,
+    "title": "Real Madrid Home Jersey",
+    "price": 500.99,
+    "description": "Authentic rare jersey, worn by Cristiano Ronaldo himself.",
+    "image": ""
+  },
+  {
+    "id": 21,
+    "title": "Tottenham Spurs Away Jersey",
+    "price": 49.99,
+    "description": "Premium soft to the touch cotton material.",
+    "image": ""
+  },
+  {
+    "id": 22,
+    "title": "Tottenham Spurs Home Jersey",
+    "price": 49.99,
+    "description": "Premium soft to the touch cotton material.",
+    "image": ""
+  },
+  {
+    "id": 23,
+    "title": "Westham Away Jersey",
+    "price": 75.99,
+    "description": "Satin lined silk jersey, with sweat protection.",
+    "image": ""
+  },
+  {
+    "id": 24,
+    "title": "Westham Hoem Jersey",
+    "price": 75.99,
+    "description": "Satin lined silk jersey, with sweat protection.",
+    "image": ""
+  }
+]
