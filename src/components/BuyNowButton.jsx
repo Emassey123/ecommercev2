@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./BuyNowButton.css";
 const BuyNowButton = () => {
   return (
     <div>

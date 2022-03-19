@@ -1,0 +1,22 @@
+.form-container {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form input {
+  margin: 0.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+}
+form input:focus {
+  outline: none;
+}

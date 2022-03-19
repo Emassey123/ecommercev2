@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.buyNow-button {
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem black;
+  margin: 0.5rem;
+}
+.buyNow-button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
