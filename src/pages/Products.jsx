@@ -4,10 +4,19 @@ import Card from "../components/Card";
 // import BuyNowButton from "../components/BuyNowButton";
 // import FavoriteButton from "../components/FavoriteButton";
 import Data from "../Data.json";
+
+// const Products = () => {
+//   return (
+//     <div>
+//       <Card />
+//     </div>
+//   )
+// }
+
 const Products = () => {
   return (
     <section>
-      <div className="products-grid">
+      <div>
         <Card />
       </div>
     </section>

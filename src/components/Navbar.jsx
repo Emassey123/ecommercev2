@@ -7,21 +7,29 @@ const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   return (
     <header>
+      <Logo />
       <nav className="navbar">
         <section className="leftSide">
           <section className="links" id={showLinks ? "hidden" : ""}>
+            {/* <Logo /> */}
             <a href="/">Home</a>
             <a href="/products">Products</a>
             <a href="/contact">Contact</a>
             <a href="/signin">Sign In</a>
           </section>
-          <button onClick={() => setShowLinks(!showLinks)}>Open</button>
+          <button
+            className="hamburger-button"
+            onClick={() => setShowLinks(!showLinks)}
+          >
+            <i class="fa fa-bars"></i>
+          </button>
         </section>
         <section className="rightSide">
           <input type="text" placeholder="search" />
           <button>Search</button>
         </section>
       </nav>
+
       {/* <nav className="navbar">
           <Logo />
           <section className="navbar-links-section">

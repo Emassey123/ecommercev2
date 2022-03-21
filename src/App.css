@@ -3,6 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+  /* background-color: black;
+  color: white; */
+}
+
 button {
   cursor: pointer;
+}
+.main-heading {
+  z-index: 2;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  box-shadow: 0 0 1rem red;
+  border-radius: 1rem;
+  width: 30%;
+}
+@media screen and (max-width: 700px) {
+  .main-heading {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 400px) {
+    .main-heading {
+      font-size: 1rem;
+    }
+  }
 }

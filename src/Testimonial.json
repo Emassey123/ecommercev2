@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Justin McNeil",
+    "date": "12-03-2021",
+    "testimonial": "The jersey fits and feels amazing! Shopping here again for sure!",
+    "image": "./images/person1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Reggie Johnson",
+    "date": "08-15-2022",
+    "testimonial": "The jersey fits and feels amazing! ",
+    "image": "./images/person2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Magic Johnson",
+    "date": "01-30-2021",
+    "testimonial": "I was able to buy a lot of jersey's here without breaking the bank!",
+    "image": "./images/person3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Faith Mejia",
+    "date": "05-27-2020",
+    "testimonial": "Affordable jersey's! Will order more in the near future.",
+    "image": "./images/person4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Karen McDonald",
+    "date": "03-02-2019",
+    "testimonial": "Jersey came as advertised, sizes are a bit tight. I'd say order a size up.",
+    "image": "./images/person5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cristiano Ronaldo",
+    "date": "09-18-2022",
+    "testimonial": "Great birthday gift for my son, he truly loves it!",
+    "image": "./images/person6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Leo Messi",
+    "date": "12-13-2020",
+    "testimonial": "The jersey didn't fit me well but they were able to exchange it with no problem!",
+    "image": "./images/person7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Paul Pogba",
+    "date": "01-30-2019",
+    "testimonial": "The jersey I ordered came fast! Such a quick delivery process.",
+    "image": "./images/person8.jpg"
+  }
+]

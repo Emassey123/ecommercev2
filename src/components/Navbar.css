@@ -10,7 +10,7 @@
   display: flex;
 }
 .navbar .leftSide {
-  flex: 50%;
+  flex: 75%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -23,16 +23,30 @@
   color: white;
   margin-left: 15px;
   font-size: 25px;
+  padding: 0.5rem;
+}
+.navbar .leftSide .links a:hover {
+  background-color: red;
+  transition: 0.3s ease-in-out;
+  border-radius: 1rem;
 }
 .navbar .leftSide button {
   display: none;
   margin-left: 20px;
 }
+.hamburger-button {
+  background-color: transparent;
+  color: white;
+  font-size: 1.25rem;
+}
+.fa-bars:focus {
+  outline: none;
+}
 .navbar .leftSide #hidden {
   display: flex;
 }
 .navbar .rightSide {
-  flex: 50%;
+  flex: 25%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -64,6 +78,9 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .navbar .leftSide {
+    flex: 25%;
+  }
   .navbar .leftSide button {
     display: flex;
   }
@@ -74,8 +91,9 @@
     position: absolute;
     left: 0;
     top: 80px;
-    height: 230px;
-    max-height: 230px;
+    z-index: 1;
+    /* height: 230px; */
+    max-height: 100%;
     width: 100%;
     background-color: black;
     display: flex;
@@ -85,6 +103,9 @@
   .navbar .leftSide #hidden a {
     margin: 10px;
     font-size: 25px;
+  }
+  .navbar.rightSide {
+    flex: 75%;
   }
 }
 /* .navbar {
