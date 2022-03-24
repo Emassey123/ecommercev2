@@ -12,7 +12,7 @@ footer {
 }
 .footer-grid {
   width: 90%;
-  margin: 1rem;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
