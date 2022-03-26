@@ -13,7 +13,7 @@ const Navbar = () => {
           <section className="links" id={showLinks ? "hidden" : ""}>
             {/* <Logo /> */}
             <a href="/">Home</a>
-            <a href="/products">Products</a>
+            <a href="/product">Products</a>
             <a href="/contact">Contact</a>
             <a href="/signin">Sign In</a>
           </section>

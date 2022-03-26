@@ -16,9 +16,7 @@ import Data from "../Data.json";
 const Products = () => {
   return (
     <section>
-      <div>
-        <Card />
-      </div>
+      <Card />
     </section>
   );
 };
