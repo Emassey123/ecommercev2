@@ -30,27 +30,32 @@ app.get("/product", (req, res) => {
     queryValue = req.query;
   }
   console.log(queryValue);
+  //Deconstructing the variables from the api call ?
   const { color, price, league } = queryValue;
+
+  //Setting up variabes to automate the query process
   const colorCheck = `color = '${queryValue.color}'`;
   //TODO find way to see if queryValue = high/low is passed the data comes back as is
   const priceCheck = `ORDER BY price ${
     queryValue.price === "low" ? "ASC" : "DESC"
-  }`;
+  } `;
   const leagueCheck = `league = '${queryValue.league}'`;
 
-  if (queryValue.color !== "all") {
+  //Setting the conditions for the querires to run mysql commands
+
+  if (color !== "all") {
     db.query(`SELECT * FROM product WHERE ${colorCheck}`, (error, result) => {
       res.send(result);
     });
-  } else if (queryValue.price !== undefined) {
+  } else if (queryValue.price !== "low") {
     db.query(`SELECT * FROM product ${priceCheck}`, (error, result) => {
       res.send(result);
     });
-  } else if (queryValue.league !== undefined) {
+  } else if (queryValue.league !== "allLeagues") {
     db.query(`SELECT * FROM product WHERE ${leagueCheck}`, (error, result) => {
       res.send(result);
     });
-  } else if (queryValue.color !== undefined && queryValue.price !== undefined) {
+  } else if (queryValue.color !== "all" && queryValue.price !== "low") {
     db.query(
       `SELECT * FROM product WHERE ${colorCheck} ${priceCheck}`,
       (error, result) => {
@@ -58,18 +63,18 @@ app.get("/product", (req, res) => {
       }
     );
   } else if (
-    queryValue.color !== undefined &&
-    queryValue.price !== undefined &&
-    queryValue.league !== undefined
+    queryValue.color !== "all" &&
+    queryValue.price !== "low" &&
+    queryValue.league !== "allLeagues"
   ) {
     db.query(
-      `SELECT * FROM product WHERE ${colorCheck}, ${leagueCheck} ${priceCheck}`,
+      `SELECT * FROM product WHERE ${colorCheck} AND ${leagueCheck} ${priceCheck}`,
       (error, result) => {
         res.send(result);
       }
     );
   } else {
-    db.query("SELECT * FROM product", (error, result) => {
+    db.query("SELECT * FROM product ORDER BY price ASC", (error, result) => {
       res.send(result);
       // console.log(queryValue.color);
     });

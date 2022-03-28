@@ -12,24 +12,27 @@ const Card = () => {
   // const [pricing, setPricing] = useState([]);
   //Setting state for all the filters
   const [color, setColor] = useState("all");
-  const [price, setPrice] = useState("noPriceFilter");
+  const [price, setPrice] = useState("low");
   const [league, setLeague] = useState("allLeagues");
   //callback function that grabs the user selected value from the dropdown filter and runs it in the getFilteredData function
   const setSelectedColor = (e) => {
     setColor(e.target.value);
     // console.log(color);
-    getFilteredData();
+    // getFilteredData();
   };
   const setSelectedPrice = (e) => {
     setPrice(e.target.value);
-    getFilteredData();
+    // getFilteredData();
   };
   const setSelectedLeague = (e) => {
     setLeague(e.target.value);
-    getFilteredData();
+    // getFilteredData();
   };
   //Using useEffect to grab the all products from the database to be displayed once
   useEffect(() => {
+    console.log(color);
+    console.log(price);
+    console.log(league);
     // GET request using axios inside useEffect React hook
     Axios.get(
       `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
@@ -42,21 +45,21 @@ const Card = () => {
       .catch((err) => {
         throw err;
       });
-  }, []);
+  }, [color, price, league]);
   //Currently logging the values from the filter dropdowns and running a get request to grab the products requested by the filter
-  const getFilteredData = () => {
-    //a function that takes in the value from the select options and runs a get request and updates the current state of the products page
-    console.log(color);
-    console.log(price);
-    console.log(league);
-    Axios.get(
-      `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
-    )
-      .then((response) => setProducts(response.data))
-      .catch((err) => {
-        throw err;
-      });
-  };
+  // const getFilteredData = () => {
+  //   //a function that takes in the value from the select options and runs a get request and updates the current state of the products page
+  //   console.log(color);
+  //   console.log(price);
+  //   console.log(league);
+  //   Axios.get(
+  //     `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
+  //   )
+  //     .then((response) => setProducts(response.data))
+  //     .catch((err) => {
+  //       throw err;
+  //     });
+  // };
   // const updateState = () => setProducts;
   // const getSortedData = (price) => {
   //   Axios.get(`http://localhost8000/product/${price.target.value}`)
@@ -85,7 +88,6 @@ const Card = () => {
         </select>
         <label htmlFor="priceSort">Price:</label>
         <select onChange={setSelectedPrice} name="priceSort" id="priceSort">
-          <option value="noPriceFilter">None</option>
           <option value="low">Low to high</option>
           <option value="high">High to low</option>
         </select>
