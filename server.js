@@ -29,56 +29,95 @@ app.get("/product", (req, res) => {
   if (req.query) {
     queryValue = req.query;
   }
-  console.log(queryValue);
+  // console.log(queryValue);
   //Deconstructing the variables from the api call ?
   const { color, price, league } = queryValue;
 
   //Setting up variabes to automate the query process
-  const colorCheck = `color = '${queryValue.color}'`;
+  // const colorCheck = queryValue.color;
   //TODO find way to see if queryValue = high/low is passed the data comes back as is
-  const priceCheck = `ORDER BY price ${
-    queryValue.price === "low" ? "ASC" : "DESC"
-  } `;
-  const leagueCheck = `league = '${queryValue.league}'`;
+  // const priceCheck = `ORDER BY price ${
+  //   queryValue.price === "low" ? "ASC" : "DESC"
+  // } `;
+  // const leagueCheck = `league = '${queryValue.league}'`;
 
   //Setting the conditions for the querires to run mysql commands
 
-  if (color !== "all") {
-    db.query(`SELECT * FROM product WHERE ${colorCheck}`, (error, result) => {
+  // if (color !== "all") {
+  //   db.query(`SELECT * FROM product WHERE ${colorCheck}`, (error, result) => {
+  //     res.send(result);
+  //   });
+  // } else if (queryValue.price !== "low") {
+  //   db.query(`SELECT * FROM product ${priceCheck}`, (error, result) => {
+  //     res.send(result);
+  //   });
+  // } else if (queryValue.league !== "allLeagues") {
+  //   db.query(`SELECT * FROM product WHERE ${leagueCheck}`, (error, result) => {
+  //     res.send(result);
+  //   });
+  // } else if (queryValue.color !== "all" && queryValue.price !== "low") {
+  const colorCheck = color !== "" ? ` color = '${color}'` : "";
+  const leagueCheck = league !== "" ? ` league = '${league}'` : "";
+  let sortedPrice = price === "low" ? "ASC" : "DESC";
+  const priceCheck = price !== "" ? ` ORDER BY price ${sortedPrice}` : "";
+  const whereChecker = colorCheck || leagueCheck ? "WHERE " : "";
+  const andChecker = colorCheck && leagueCheck ? "AND " : "";
+  // Only use where when filter checks are defined
+  // console.log(whereChecker, colorCheck, andChecker, leagueCheck, priceCheck);
+  db.query(
+    `SELECT * FROM product ${whereChecker} ${colorCheck} ${andChecker} ${leagueCheck} ${priceCheck}`,
+    (error, result) => {
       res.send(result);
-    });
-  } else if (queryValue.price !== "low") {
-    db.query(`SELECT * FROM product ${priceCheck}`, (error, result) => {
-      res.send(result);
-    });
-  } else if (queryValue.league !== "allLeagues") {
-    db.query(`SELECT * FROM product WHERE ${leagueCheck}`, (error, result) => {
-      res.send(result);
-    });
-  } else if (queryValue.color !== "all" && queryValue.price !== "low") {
-    db.query(
-      `SELECT * FROM product WHERE ${colorCheck} ${priceCheck}`,
-      (error, result) => {
-        res.send(result);
-      }
-    );
-  } else if (
-    queryValue.color !== "all" &&
-    queryValue.price !== "low" &&
-    queryValue.league !== "allLeagues"
-  ) {
-    db.query(
-      `SELECT * FROM product WHERE ${colorCheck} AND ${leagueCheck} ${priceCheck}`,
-      (error, result) => {
-        res.send(result);
-      }
-    );
-  } else {
-    db.query("SELECT * FROM product ORDER BY price ASC", (error, result) => {
-      res.send(result);
-      // console.log(queryValue.color);
-    });
-  }
+    }
+  );
+
+  // let sql = `SELECT * FROM product`;
+
+  // const filterOptions = [colorCheck, leagueCheck, priceCheck]; // This is where we would put the result of the filterChecks
+
+  // const generatedString = () => {
+  //   if (filterOptions.length === 1) {
+  //     // if there is only 1 filter applied
+  //     sql = sql.concat(" WHERE ", ...filterOptions); // simply attatch the where then spread the option
+  //   } else if (filterOptions.length > 1) {
+  //     // if there is more than 1 filter applied
+  //     const formattedOptions = filterOptions.map((option, index) => {
+  //       // loop over all options
+  //       if (index < filterOptions.length - 1) {
+  //         // if it's not the last option add the option + AND
+  //         return option + " AND ";
+  //       } else {
+  //         // If it's the last option then return just the option
+  //         return option;
+  //       }
+  //     });
+
+  //     sql = sql.concat(" WHERE ", ...formattedOptions); // concatenate the final result of the loop
+  //   }
+
+  //   console.log(sql); // Output: SELECT * FROM table WHERE test1 AND test2 AND test3
+  // };
+
+  // generatedString(); // Method call
+  /*if there is one value => select * from product
+    if there is more than one (have anohter )*/
+  // } else if (
+  //   queryValue.color !== "all" &&
+  //   queryValue.price !== "low" &&
+  //   queryValue.league !== "allLeagues"
+  // ) {
+  //   db.query(
+  //     `SELECT * FROM product WHERE ${colorCheck} AND ${leagueCheck} ${priceCheck}`,
+  //     (error, result) => {
+  //       res.send(result);
+  //     }
+  //   );
+  // } else {
+  //   db.query("SELECT * FROM product ORDER BY price ASC", (error, result) => {
+  //     res.send(result);
+  //     // console.log(queryValue.color);
+  //   });
+  // }
 });
 
 //     db.query("SELECT * FROM product ORDER BY price ASC", (error, result) => {

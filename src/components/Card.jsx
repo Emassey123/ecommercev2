@@ -11,9 +11,9 @@ const Card = () => {
   const [products, setProducts] = useState([]);
   // const [pricing, setPricing] = useState([]);
   //Setting state for all the filters
-  const [color, setColor] = useState("all");
-  const [price, setPrice] = useState("low");
-  const [league, setLeague] = useState("allLeagues");
+  const [color, setColor] = useState("");
+  const [price, setPrice] = useState("");
+  const [league, setLeague] = useState("");
   //callback function that grabs the user selected value from the dropdown filter and runs it in the getFilteredData function
   const setSelectedColor = (e) => {
     setColor(e.target.value);
@@ -40,7 +40,7 @@ const Card = () => {
       .then((response) => {
         // setSelectedColor("all");
         console.log(response.data);
-        setProducts(response.data);
+        setProducts(response.data || []);
       })
       .catch((err) => {
         throw err;
@@ -79,7 +79,7 @@ const Card = () => {
         <label htmlFor="colorFilter">Color:</label>
         {/* setting the onChange function to run a callback function */}
         <select onChange={setSelectedColor} name="colorFilter" id="colorFilter">
-          <option value="all">All</option>
+          <option value="">All</option>
           <option value="red">Red</option>
           <option value="blue">Blue</option>
           <option value="black">Black</option>
@@ -97,7 +97,7 @@ const Card = () => {
           name="leagueFilter"
           id="leagureFilter"
         >
-          <option value="allLeagues">All</option>
+          <option value="">All</option>
           <option value="bundesliga">Bundesliga</option>
           <option value="la liga">La Liga</option>
           <option value="premier league">Premier League</option>
