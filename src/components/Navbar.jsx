@@ -15,7 +15,6 @@ const Navbar = () => {
             <a href="/">Home</a>
             <a href="/product">Products</a>
             <a href="/contact">Contact</a>
-            <a href="/signin">Sign In</a>
           </section>
           <button
             className="hamburger-button"
@@ -26,11 +25,17 @@ const Navbar = () => {
         </section>
         <section className="rightSide">
           <input type="text" placeholder="search" />
-          <button>Search</button>
         </section>
       </nav>
 
-      {/* <nav className="navbar">
+      <Outlet></Outlet>
+    </header>
+  );
+};
+
+export default Navbar;
+{
+  /* <nav className="navbar">
           <Logo />
           <section className="navbar-links-section">
             <a href="/" className="navbar-links">
@@ -69,10 +74,5 @@ const Navbar = () => {
               </svg>
             </a>
           </section>
-        </nav> */}
-      <Outlet></Outlet>
-    </header>
-  );
-};
-
-export default Navbar;
+        </nav> */
+}

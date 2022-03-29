@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 const Form = () => {
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+  // const [submitted, setSubmitted] = useState(false);
+
+  // const [valid, setValid] = useState(false);
+
+  // const [showError, setShowError] = useState(false);
+
+  const handleFirstNameInputChange = (e) => {
+    setFormValues({ ...formValues, firstName: e.target.value });
+  };
+  const handleLastNameInputChange = (e) => {
+    setFormValues({ ...formValues, lastName: e.target.value });
+  };
+  const handleEmailInputChange = (e) => {
+    setFormValues({ ...formValues, email: e.target.value });
+  };
+  const handlePhoneNumberInputChange = (e) => {
+    setFormValues({ ...formValues, phoneNumber: e.target.value });
+  };
+  const handleMessageInputChange = (e) => {
+    setFormValues({ ...formValues, message: e.target.value });
+  };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (
+  //     formValues.firstName &&
+  //     formValues.lastName &&
+  //     formValues.email &&
+  //     formValues.phoneNumber
+  //   ) {
+  //     setValid(true);
+  //   }
+  //   setSubmitted(true);
+  // };
+
   return (
     <section className="form-background-color">
       <h1 className="main-heading footer-main-heading">Contact Us</h1>
@@ -11,6 +53,8 @@ const Form = () => {
               First Name:<span className="star">*</span>
             </label>
             <input
+              onChange={handleFirstNameInputChange}
+              value={formValues.firstName}
               type="text"
               name="firstName"
               className="form-control"
@@ -23,6 +67,8 @@ const Form = () => {
               Last Name:<span className="star">*</span>
             </label>
             <input
+              onChange={handleLastNameInputChange}
+              value={formValues.lastName}
               type="text"
               name="lastName"
               className="form-control"
@@ -35,7 +81,9 @@ const Form = () => {
               Email:<span className="star">*</span>
             </label>
             <input
-              type="text"
+              onChange={handleEmailInputChange}
+              value={formValues.email}
+              type="email"
               name="email"
               className="form-control"
               placeholder="johndoe@gmail.com"
@@ -47,6 +95,8 @@ const Form = () => {
               Phone Number:<span className="star">*</span>
             </label>
             <input
+              onChange={handlePhoneNumberInputChange}
+              value={formValues.phoneNumber}
               type="tel"
               name="phoneNumber"
               className="form-control"
@@ -58,8 +108,10 @@ const Form = () => {
           <section className="form-group">
             <label htmlFor="comment">Comment:</label>
             <textarea
+              onChange={handleMessageInputChange}
+              value={formValues.message}
               className="form-control"
-              name="comment"
+              name="message"
               id="message"
               cols="30"
               rows="10"

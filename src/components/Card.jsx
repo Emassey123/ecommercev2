@@ -46,35 +46,11 @@ const Card = () => {
         throw err;
       });
   }, [color, price, league]);
-  //Currently logging the values from the filter dropdowns and running a get request to grab the products requested by the filter
-  // const getFilteredData = () => {
-  //   //a function that takes in the value from the select options and runs a get request and updates the current state of the products page
-  //   console.log(color);
-  //   console.log(price);
-  //   console.log(league);
-  //   Axios.get(
-  //     `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
-  //   )
-  //     .then((response) => setProducts(response.data))
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // };
-  // const updateState = () => setProducts;
-  // const getSortedData = (price) => {
-  //   Axios.get(`http://localhost8000/product/${price.target.value}`)
-  //     .then((response) => setPricing(response.data))
-  //     .catch((err) => {
-  //       throw err;
-  //     });
-  // };
-
-  // empty dependency array means this effect will only run once (like componentDidMount in classes)
 
   return (
     <>
       <h1 className="main-heading">Products</h1>
-      <section className="sortation">
+      <section className="filters">
         <h2>Filter By:</h2>
         <label htmlFor="colorFilter">Color:</label>
         {/* setting the onChange function to run a callback function */}
@@ -117,8 +93,8 @@ const Card = () => {
                 <label htmlFor="size">Size:</label>
                 <select name="size" id="size">
                   <option value="extra small">XS</option>
-                  <option value="extra small">S</option>
-                  <option value=" small">M</option>
+                  <option value=" small">S</option>
+                  <option value=" medium">M</option>
                   <option value="large">L</option>
                   <option value="extra large">XL</option>
                 </select>
@@ -136,3 +112,27 @@ const Card = () => {
 };
 
 export default Card;
+//Currently logging the values from the filter dropdowns and running a get request to grab the products requested by the filter
+// const getFilteredData = () => {
+//   //a function that takes in the value from the select options and runs a get request and updates the current state of the products page
+//   console.log(color);
+//   console.log(price);
+//   console.log(league);
+//   Axios.get(
+//     `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
+//   )
+//     .then((response) => setProducts(response.data))
+//     .catch((err) => {
+//       throw err;
+//     });
+// };
+// const updateState = () => setProducts;
+// const getSortedData = (price) => {
+//   Axios.get(`http://localhost8000/product/${price.target.value}`)
+//     .then((response) => setPricing(response.data))
+//     .catch((err) => {
+//       throw err;
+//     });
+// };
+
+// empty dependency array means this effect will only run once (like componentDidMount in classes)

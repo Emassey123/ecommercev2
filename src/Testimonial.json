@@ -1,35 +1,35 @@
 [
   {
     "id": 1,
-    "name": "Justin McNeil",
+    "name": "Christy Smith",
     "date": "12-03-2021",
     "testimonial": "The jersey fits and feels amazing! Shopping here again for sure!",
     "image": "./images/person1.jpg"
   },
   {
     "id": 2,
-    "name": "Reggie Johnson",
+    "name": "Regina Johnson",
     "date": "08-15-2022",
     "testimonial": "The jersey fits and feels amazing! ",
     "image": "./images/person2.jpg"
   },
   {
     "id": 3,
-    "name": "Magic Johnson",
+    "name": "Carly Smith",
     "date": "01-30-2021",
     "testimonial": "I was able to buy a lot of jersey's here without breaking the bank!",
     "image": "./images/person3.jpg"
   },
   {
     "id": 4,
-    "name": "Faith Mejia",
+    "name": "Jennifer White",
     "date": "05-27-2020",
     "testimonial": "Affordable jersey's! Will order more in the near future.",
     "image": "./images/person4.jpg"
   },
   {
     "id": 5,
-    "name": "Karen McDonald",
+    "name": "Karen Doodley",
     "date": "03-02-2019",
     "testimonial": "Jersey came as advertised, sizes are a bit tight. I'd say order a size up.",
     "image": "./images/person5.jpg"

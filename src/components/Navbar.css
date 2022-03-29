@@ -42,11 +42,11 @@
 .fa-bars:focus {
   outline: none;
 }
-.navbar .leftSide #hidden {
+/* .navbar .leftSide #hidden {
   display: flex;
-}
+} */
 .navbar .rightSide {
-  flex: 25%;
+  flex: 50%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -61,11 +61,7 @@
   color: black;
   font-size: 20px;
 }
-.rightSide button {
-  height: 32px;
-  width: 70px;
-  font-size: 16px;
-}
+
 
 @media screen and (max-width: 850px) {
   .navbar .leftSide .links a {
@@ -79,7 +75,7 @@
 }
 @media screen and (max-width: 650px) {
   .navbar .leftSide {
-    flex: 25%;
+    flex: 50%;
   }
   .navbar .leftSide button {
     display: flex;
@@ -93,7 +89,7 @@
     top: 80px;
     z-index: 1;
     /* height: 230px; */
-    max-height: 100%;
+    max-height: 200px;
     width: 100%;
     background-color: black;
     display: flex;
@@ -105,7 +101,7 @@
     font-size: 25px;
   }
   .navbar.rightSide {
-    flex: 75%;
+    flex: 50%;
   }
 }
 /* .navbar {

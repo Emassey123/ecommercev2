@@ -55,11 +55,15 @@
   margin: 0.5rem;
   text-align: center;
 }
-.sortation {
+.filters {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin: 4rem auto;
 }
-.sortation h2 {
-  margin-top: 4rem;
+.filters h2 {
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1000px) {
