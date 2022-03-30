@@ -82,12 +82,12 @@ const Card = () => {
           return (
             <section className="card-item" key={jersey.product_id}>
               <section className="card-image-container">
-                <img src={jersey.image} alt={jersey.name} />
+                <img src={jersey.product_image} alt={jersey.product_name} />
               </section>
               <section className="card-info">
-                <h1 className="card-title">{jersey.name}</h1>
-                <p className="card-desc">{jersey.description}</p>
-                <p className="card-price">{jersey.price}</p>
+                <h1 className="card-title">{jersey.product_name}</h1>
+                <p className="card-desc">{jersey.product_description}</p>
+                <p className="card-price">{jersey.product_price}</p>
                 <label htmlFor="size">Size:</label>
                 <select name="size" id="size">
                   <option value="extra small">XS</option>
