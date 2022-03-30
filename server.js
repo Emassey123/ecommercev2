@@ -3,28 +3,28 @@ const cors = require("cors");
 const mysql = require("mysql");
 const { query } = require("express");
 require("dotenv").config();
-
+const path = require("path");
 const app = express();
 
 //Connecting to the database and checking for errors if any are present
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "ecommerceDB",
-});
-db.connect((err) => {
-  if (err) {
-    return err;
-  } else {
-    console.log("db connection succesful");
-  }
-});
+const db_config = {
+  host: "us-cdbr-east-05.cleardb.net",
+  user: "b1dd630fcdd142",
+  password: "6ef7856c",
+  database: "heroku_6517784487e99c2",
+};
+// db.connect((err) => {
+//   if (err) {
+//     return err;
+//   } else {
+//     console.log("db connection succesful");
+//   }
+// });
 app.use(cors());
 app.use(express.json());
-const port = process.env.port;
+// const port = process.env.port;
 // Setting queries to the database based on the selected value from the dropdown
-app.get("/product", (req, res) => {
+app.get("/api/product", (req, res) => {
   // let queryValue = "all";
   if (req.query) {
     queryValue = req.query;
@@ -34,22 +34,53 @@ app.get("/product", (req, res) => {
   const { color, price, league } = queryValue;
 
   //Setting up variabes to automate the query process
-  const colorCheck = color !== "" ? ` color = '${color}'` : "";
-  const leagueCheck = league !== "" ? ` league = '${league}'` : "";
+  const colorCheck = color !== "" ? ` product_color = '${color}'` : "";
+  const leagueCheck = league !== "" ? ` product_league = '${league}'` : "";
   const sortedPrice = price === "low" ? "ASC" : "DESC";
-  const priceCheck = price !== "" ? ` ORDER BY price ${sortedPrice}` : "";
+  const priceCheck =
+    price !== "" ? ` ORDER BY product_price ${sortedPrice}` : "";
   const whereChecker = colorCheck || leagueCheck ? "WHERE " : "";
   const andChecker = colorCheck && leagueCheck ? "AND " : "";
-  db.query(
+  connection.query(
     `SELECT * FROM product ${whereChecker} ${colorCheck} ${andChecker} ${leagueCheck} ${priceCheck}`,
     (error, result) => {
       res.send(result);
     }
   );
 });
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
+let connection;
+app.use(express.static(path.join(__dirname, "./build")));
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
+
+app.listen(process.env.PORT || 8000, function () {
+  console.log(`Express is working on port 8000`);
+});
+
+function handleDisconnect() {
+  connection = mysql.createConnection(db_config);
+
+  connection.connect(function (err) {
+    if (err) {
+      console.log("error when connecting to db:", err);
+      setTimeout(handleDisconnect, 2000);
+    }
+  });
+
+  connection.on("error", function (err) {
+    console.log("db error", err);
+    if (err.code === "PROTOCOL_CONNECTION_LOST") {
+      handleDisconnect();
+    } else {
+      throw err;
+    }
+  });
+}
+handleDisconnect();
+// app.listen(port, () => {
+//   console.log(`listening on ${port}`);
+// });
 // const colorCheck = queryValue.color;
 //TODO find way to see if queryValue = high/low is passed the data comes back as is
 // const priceCheck = `ORDER BY price ${

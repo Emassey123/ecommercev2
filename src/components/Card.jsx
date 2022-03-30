@@ -34,9 +34,8 @@ const Card = () => {
     console.log(price);
     console.log(league);
     // GET request using axios inside useEffect React hook
-    Axios.get(
-      `http://localhost:8000/product?color=${color}&price=${price}&league=${league}`
-    )
+    Axios.get(`/api/product`)
+      //  ?color=${color}&price=${price}&league=${league}
       .then((response) => {
         // setSelectedColor("all");
         console.log(response.data);
