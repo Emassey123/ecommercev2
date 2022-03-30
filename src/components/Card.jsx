@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AddToCartButton from "./AddToCartButton";
 import BuyNowButton from "./BuyNowButton";
 // import FavoriteButton from "./FavoriteButton";
-// import Data from "../Data.json";
 import "./Card.css";
 import Axios from "axios";
 

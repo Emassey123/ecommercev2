@@ -3,7 +3,6 @@ import Card from "../components/Card";
 // import AddToCart from "../components/AddToCart";
 // import BuyNowButton from "../components/BuyNowButton";
 // import FavoriteButton from "../components/FavoriteButton";
-import Data from "../Data.json";
 
 // const Products = () => {
 //   return (
