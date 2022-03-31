@@ -9,7 +9,7 @@ const Footer = () => {
         <section className="helpful-links-container">
           <h1>Helpful Links</h1>
           <a href="/">Home</a>
-          <a href="/products">Products</a>
+          <a href="/product">Products</a>
           <a href="contact">Contact</a>
           <a href="/signin">Sign-in</a>
         </section>
