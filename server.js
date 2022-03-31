@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
-const { query } = require("express");
 require("dotenv").config();
 const path = require("path");
 const app = express();
@@ -25,7 +24,7 @@ app.use(express.json());
 // const port = process.env.port;
 // Setting queries to the database based on the selected value from the dropdown
 app.get("/api/product", (req, res) => {
-  // let queryValue = "all";
+  let queryValue;
   if (req.query) {
     queryValue = req.query;
   }
