@@ -10,7 +10,7 @@
   display: flex;
 }
 .navbar .leftSide {
-  flex: 75%;
+  flex: 50%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -74,9 +74,7 @@
   }
 }
 @media screen and (max-width: 650px) {
-  .navbar .leftSide {
-    flex: 50%;
-  }
+
   .navbar .leftSide button {
     display: flex;
   }
@@ -100,9 +98,7 @@
     margin: 10px;
     font-size: 25px;
   }
-  .navbar.rightSide {
-    flex: 50%;
-  }
+
 }
 /* .navbar {
 
