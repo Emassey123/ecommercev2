@@ -1,9 +1,7 @@
 /* Placing the HERO image  */
 .hero-image {
-  background-image: linear-gradient(
-      rgba(15, 64, 226, 0.356),
-      rgba(0, 0, 0, 0.5)
-    ),
+  background-image: linear-gradient(rgba(15, 64, 226, 0.356),
+      rgba(0, 0, 0, 0.5)),
     url(../../public/images/heroimg.png);
   height: 100vh;
   background-position: center;
@@ -54,14 +52,17 @@
   .hero-title {
     font-size: 2rem;
   }
+
   .hero-subtitle {
     font-size: 1.5rem;
   }
 }
+
 @media screen and (max-width: 400px) {
   .hero-title {
     font-size: 1.3rem;
   }
+
   .hero-subtitle {
     font-size: 1rem;
   }

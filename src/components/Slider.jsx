@@ -39,24 +39,6 @@ const Slider = () => {
         ))}
       </Carousel>
     </section>
-    /* <Carousel>
-        <Testimonial number="1" />
-        <Testimonial number="2" />
-        <Testimonial number="3" />
-        <Testimonial number="4" />
-        <Testimonial number="5" />
-        <Testimonial number="6" />
-        <Testimonial number="7" />
-        <Testimonial number="8" />
-      </Carousel> */
-    /* <Testimonial customerTestimonial={testimonialData} /> */
-    /* <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} />
-        <Testimonial customerTestimonial={testimonialData} /> */
   );
 };
 

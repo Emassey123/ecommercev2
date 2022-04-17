@@ -125,57 +125,5 @@ const Form = () => {
     </section>
   );
 };
-{
-  /* <section className="form-container">
-        <section className="form-title">
-          <h1>Contact Us</h1>
-        </section>
-        <form action="#">
-          <section className="user-details">
-            <section className="input-box">
-              <label className="details" htmlFor="first_name">
-                First Name:
-              </label>
-              <input type="text" placeholder="John" name="first_name" />
-            </section>
-            <section className="input-box">
-              <label className="details" htmlFor="last_name">
-                Last Name:
-              </label>
-              <input type="text" placeholder="Doe" name="last_name" />
-            </section>
-            <section className="input-box">
-              <label className="details" htmlFor="email">
-                Email:
-              </label>
-              <input type="text" placeholder="johndoe@gmail.com" name="email" />
-            </section>
-            <section className="input-box">
-              <label className="details" htmlFor="phone_number">
-                Phone Number:
-              </label>
-              <input
-                type="tel"
-                placeholder="888-888-8888"
-                pattern="[0-9] {3} - [0-9] {3} - [0-9] {4} "
-                name="phone_number"
-              />
-            </section>
-            <section className="input-box">
-              <label className="details" htmlFor="comment">
-                Comment:
-              </label>
-              <input
-                type="text"
-                name="comment"
-                placeholder="Leave comment here..."
-              />
-            </section>
-          </section>
-          <section className="submit-button">
-            <input type="submit" value="submit" />
-          </section>
-        </form>
-      </section> */
-}
+
 export default Form;
